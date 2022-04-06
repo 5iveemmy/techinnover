@@ -14,6 +14,7 @@ const Nav = styled.nav``;
 const NavbarContainer = styled(Container)`
   display: flex;
   justify-content: space-between;
+  padding-top: 28px;
   ${Container}
 `;
 
@@ -47,7 +48,7 @@ const NavMenu = styled.div<IProps>`
     width: 100%;
     height: 98vh;
     position: absolute;
-    top: 95px;
+    top: 75px;
     left: ${({ clicked }) => (clicked ? 0 : "-100%")};
     opacity: 1;
     transition: all 0.5s ease;
@@ -65,10 +66,10 @@ const NavLinks = styled(Link)`
     display: table;
     color: #ffffff;
     opacity: 1;
-    &:hover {
+    /* &:hover {
       color: #4b59f7;
       transition: all 0.3s ease;
-    }
+    } */
   }
 `;
 
@@ -108,9 +109,19 @@ const NavRight = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  @media screen and (max-width: 960px) {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+  }
 `;
 
-const In = styled.p``;
+const In = styled.p`
+  @media screen and (max-width: 960px) {
+    margin-top: -9rem;
+  }
+`;
 
 const Free = styled.div``;
 
