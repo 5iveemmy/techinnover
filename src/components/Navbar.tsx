@@ -1,7 +1,13 @@
+import { useState } from "react";
 import styled from "styled-components";
-import React from "react";
 import { Container } from "../globalStyles";
+import { FaBars, FaTimes } from "react-icons/fa";
 import arrowDown from "../assets/arrowDown.svg";
+import { Link } from "react-router-dom";
+
+interface IProps {
+  clicked: boolean;
+}
 
 const Nav = styled.nav``;
 
@@ -17,10 +23,53 @@ const NavLeft = styled.h3`
   align-self: center;
 `;
 
-const NavMenu = styled.div`
+const MobileIcon = styled.div`
+  display: none;
+
+  @media screen and (max-width: 960px) {
+    display: block;
+    position: absolute;
+    right: 0;
+    transform: translate(-100%, -8%);
+    font-size: 1.8rem;
+    cursor: pointer;
+  }
+`;
+
+const NavMenu = styled.div<IProps>`
   display: flex;
   justify-content: space-between;
   width: 790px;
+
+  @media screen and (max-width: 960px) {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 98vh;
+    position: absolute;
+    top: 95px;
+    left: ${({ clicked }) => (clicked ? 0 : "-100%")};
+    opacity: 1;
+    transition: all 0.5s ease;
+    background: #3734a9;
+  }
+`;
+
+const NavLinks = styled(Link)`
+  text-decoration: none;
+
+  @media screen and (max-width: 960px) {
+    text-align: center;
+    padding: 2rem;
+    width: 100%;
+    display: table;
+    color: #ffffff;
+    opacity: 1;
+    &:hover {
+      color: #4b59f7;
+      transition: all 0.3s ease;
+    }
+  }
 `;
 
 const NavMiddle = styled.ul`
@@ -29,14 +78,29 @@ const NavMiddle = styled.ul`
   align-items: center;
   list-style: none;
   width: 321px;
+  @media screen and (max-width: 960px) {
+    flex-direction: column;
+    width: 100%;
+  }
 `;
 
 const NavMidList = styled.li`
   cursor: pointer;
+
+  @media screen and (max-width: 960px) {
+    width: 100%;
+    &:hover {
+      border: none;
+    }
+  }
 `;
 
 const NmlIcon = styled.img`
   padding-left: 12px;
+
+  @media screen and (max-width: 960px) {
+    display: none;
+  }
 `;
 
 const NavRight = styled.div`
@@ -74,21 +138,36 @@ const FreeBtn = styled.button`
 `;
 
 const Navbar = () => {
+  const [click, setClick] = useState(false);
+
+  const handleClick = () => setClick(!click);
+
   return (
     <Nav>
       <NavbarContainer>
         <NavLeft>AR SHAKIR</NavLeft>
-        <NavMenu>
+        <MobileIcon onClick={handleClick}>
+          {click ? <FaTimes size="32" /> : <FaBars size="32" />}
+        </MobileIcon>
+        <NavMenu onClick={handleClick} clicked={click}>
           <NavMiddle>
             <NavMidList>
-              Product
-              <NmlIcon src={arrowDown} alt="icon" />
+              <NavLinks to="/">
+                Product <NmlIcon src={arrowDown} alt="icon" />{" "}
+              </NavLinks>
             </NavMidList>
             <NavMidList>
-              Template <NmlIcon src={arrowDown} alt="icon" />
+              <NavLinks to="/">
+                Template <NmlIcon src={arrowDown} alt="icon" />
+              </NavLinks>{" "}
             </NavMidList>
-            <NavMidList>Blog</NavMidList>
-            <NavMidList>Pricing</NavMidList>
+            <NavMidList>
+              {" "}
+              <NavLinks to="/">Blog</NavLinks>
+            </NavMidList>
+            <NavMidList>
+              <NavLinks to="/">Pricing</NavLinks>
+            </NavMidList>
           </NavMiddle>
           <NavRight>
             <In>Sign In</In>
