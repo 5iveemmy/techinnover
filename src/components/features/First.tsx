@@ -1,14 +1,29 @@
 import styled from "styled-components";
 import { Button, Container } from "../../globalStyles";
-import tot from "../../assets/tot.svg";
+// import tot from "../../assets/tot.svg";
 import { FeatCont, FrBtnWrap, FrH, FrP, FsH } from "./styles";
+
+interface FeatProps {
+  imgStart?: boolean;
+}
+
+interface FirstProps {
+  img?: string;
+  headText?: string;
+  subText?: string;
+  para?: string;
+  buttonLabel?: string;
+  imgStart?: boolean;
+}
 
 const FirstDiv = styled.div``;
 
-const FirstWrap = styled.div`
+const FirstWrap = styled.div<FeatProps>`
   display: flex;
   justify-content: space-between;
   padding-top: 7rem;
+  flex-direction: ${({ imgStart }) => (imgStart ? "row-reverse" : "row")};
+  /* flex-wrap: wrap; */
 `;
 
 const FirstLeft = styled.div``;
@@ -17,25 +32,28 @@ const FirstImg = styled.img`
   width: 710px;
 `;
 
-const First = () => {
+const First = ({
+  img,
+  headText,
+  subText,
+  para,
+  imgStart,
+  buttonLabel,
+}: FirstProps) => {
   return (
     <FirstDiv>
       <Container>
-        <FirstWrap>
+        <FirstWrap imgStart={imgStart}>
           <FirstLeft>
-            <FirstImg src={tot} />
+            <FirstImg src={img} />
           </FirstLeft>
           <FeatCont>
-            <FrH>OUR FEATURE</FrH>
-            <FsH>Receive payments quickly from anywhere</FsH>
-            <FrP>
-              Why kept very ever home mrs. Considered sympathize ten uncommonly
-              occasional assistance sufficient not. Letter of on become he
-              tended active enable to.
-            </FrP>
+            <FrH>{headText}</FrH>
+            <FsH>{subText}</FsH>
+            <FrP>{para}</FrP>
             <FrBtnWrap>
               <Button bold big>
-                Get Started
+                {buttonLabel}
               </Button>
             </FrBtnWrap>
           </FeatCont>

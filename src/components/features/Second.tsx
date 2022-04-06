@@ -1,12 +1,14 @@
 import styled from "styled-components";
 import { Container } from "../../globalStyles";
 import { FeatCont, FrH, FrP, FsH } from "./styles";
+import birds from "../../assets/birds.svg";
 
 const SecondDiv = styled.div`
   background-color: #f3f7fa;
   border-radius: 20px;
   width: 1170px;
   margin: auto;
+  position: relative;
 `;
 
 const SecondWrap = styled.div`
@@ -69,10 +71,18 @@ const GstBtn = styled.div`
   }
 `;
 
+const Birds = styled.img`
+  position: absolute;
+  position: absolute;
+  right: 0;
+  top: -1.5rem;
+`;
+
 const Second = () => {
   return (
     <Container>
       <SecondDiv>
+        <Birds src={birds} alt="Birds" />
         <SecondWrap>
           <FeatCont>
             <FrH>OUR FEATURE</FrH>
