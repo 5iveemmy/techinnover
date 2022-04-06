@@ -1,14 +1,21 @@
 import styled from "styled-components";
-import { Container } from "../../globalStyles";
+import { Button, Container } from "../../globalStyles";
 import tot from "../../assets/tot.svg";
+import { FeatCont, FrBtnWrap, FrH, FrP, FsH } from "./styles";
 
 const FirstDiv = styled.div``;
 
-const FirstWrap = styled.div``;
+const FirstWrap = styled.div`
+  display: flex;
+  justify-content: space-between;
+  padding-top: 7rem;
+`;
 
 const FirstLeft = styled.div``;
 
-const FirstImg = styled.img``;
+const FirstImg = styled.img`
+  width: 710px;
+`;
 
 const First = () => {
   return (
@@ -18,7 +25,7 @@ const First = () => {
           <FirstLeft>
             <FirstImg src={tot} />
           </FirstLeft>
-          <FirstRight>
+          <FeatCont>
             <FrH>OUR FEATURE</FrH>
             <FsH>Receive payments quickly from anywhere</FsH>
             <FrP>
@@ -27,9 +34,11 @@ const First = () => {
               tended active enable to.
             </FrP>
             <FrBtnWrap>
-              <FrBtn>Get Started</FrBtn>
+              <Button bold big>
+                Get Started
+              </Button>
             </FrBtnWrap>
-          </FirstRight>
+          </FeatCont>
         </FirstWrap>
       </Container>
     </FirstDiv>

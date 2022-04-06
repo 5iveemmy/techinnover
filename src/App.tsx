@@ -1,4 +1,5 @@
 import { BrowserRouter } from "react-router-dom";
+import { Features } from "./components/features";
 import HeroSection from "./components/HeroSection";
 import Navbar from "./components/Navbar";
 import GlobalStyle from "./globalStyles";
@@ -10,6 +11,7 @@ function App() {
         <GlobalStyle />
         <Navbar />
         <HeroSection />
+        <Features />
       </BrowserRouter>
     </>
   );

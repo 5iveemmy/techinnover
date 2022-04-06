@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Container } from "../globalStyles";
+import { Button, Container } from "../globalStyles";
 import play from "../assets/play.svg";
 import smile from "../assets/girlOnPhone.svg";
 import zep from "../assets/zep.svg";
@@ -46,30 +46,6 @@ const HeroBtns = styled.div`
 `;
 
 const GetWrap = styled.div``;
-
-const GetBtn = styled.button`
-  padding: 15px 35px;
-  width: 162px;
-  height: 60px;
-  color: #fff;
-  font-weight: 700;
-  letter-spacing: -0.02em;
-  background: #3734a9;
-  box-shadow: 0px 67px 80px rgba(55, 52, 169, 0.07),
-    0px 43.4259px 46.8519px rgba(55, 52, 169, 0.0531481),
-    0px 25.8074px 25.4815px rgba(55, 52, 169, 0.0425185),
-    0px 13.4px 13px rgba(55, 52, 169, 0.035),
-    0px 5.45926px 6.51852px rgba(55, 52, 169, 0.0274815),
-    0px 1.24074px 3.14815px rgba(55, 52, 169, 0.0168519);
-  border-radius: 47px;
-  border: none;
-  cursor: pointer;
-
-  &:hover {
-    opacity: 0.8;
-    transition: 0.4s ease-in-out;
-  }
-`;
 
 const Shiw = styled.div`
   display: flex;
@@ -183,7 +159,9 @@ const HeroSection = () => {
             </End>
             <HeroBtns>
               <GetWrap>
-                <GetBtn>Get Started</GetBtn>
+                <Button round bold big>
+                  Get Started
+                </Button>
               </GetWrap>
               <Shiw>
                 <PlayWrap>

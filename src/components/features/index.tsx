@@ -1,9 +1,11 @@
+import First from "./First";
+import Second from "./Second";
+
 export const Features = () => {
   return (
     <>
-      <div>For features</div>
+      <First />
+      <Second />
     </>
   );
 };
-
-export default Features;
