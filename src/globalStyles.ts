@@ -5,7 +5,9 @@ const GlobalStyle = createGlobalStyle`
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    font-family: 'Manrope', sans-serif;   
+    font-family: 'Manrope', sans-serif;
+    color: #000000;   
+    font-size: 14px;
 }
 `;
 
@@ -16,6 +18,7 @@ export const Container = styled.div`
   margin-right: auto;
   margin-left: auto;
   padding-left: 50px;
+  padding-top: 28px;
   padding-right: 50px;
   @media screen and (max-width: 475px) {
     padding-right: 38px;
