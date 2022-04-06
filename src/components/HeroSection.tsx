@@ -2,6 +2,12 @@ import styled from "styled-components";
 import { Container } from "../globalStyles";
 import play from "../assets/play.svg";
 import smile from "../assets/girlOnPhone.svg";
+import zep from "../assets/zep.svg";
+import oracle from "../assets/oracle.svg";
+import morph from "../assets/morph.svg";
+import sam from "../assets/sam.svg";
+import mon from "../assets/mon.svg";
+import seg from "../assets/seg.svg";
 
 const HeroSect = styled.div``;
 
@@ -113,25 +119,53 @@ const HeroImage = styled.img`
   height: 549px;
 `;
 
-const Promo = styled.div;
+const Promo = styled.div`
+  padding-top: 24px;
+  padding-bottom: 24px;
+`;
 
-const PromoWrap = styled.div``;
+const PromoWrap = styled.div`
+  text-align: center;
+  padding-left: 60px;
+  padding-right: 60px;
+`;
 
-const PromoHead = styled.h3``;
+const PromoHead = styled.h3`
+  font-size: 22px;
+  line-height: 30px;
+  padding-bottom: 40px;
+`;
 
-const Logos = styled.div``;
+const Logos = styled.div`
+  display: flex;
+  justify-content: space-between;
+`;
+
+const Ozp = styled.img``;
+const Mor = styled.img``;
+const Ora = styled.img``;
+const Sam = styled.img``;
+const Mon = styled.img``;
+const Seg = styled.img``;
 
 const Promos = () => {
   return (
     <Promo>
-      <PromoWrap>
-        <PromoHead>
-          Over 32k+ software businesses growing with AR Shakir
-        </PromoHead>
-        <Logos>
-          <Ozp />
-        </Logos>
-      </PromoWrap>
+      <Container>
+        <PromoWrap>
+          <PromoHead>
+            Over 32k+ software businesses growing with AR Shakir
+          </PromoHead>
+          <Logos>
+            <Ozp src={zep} alt="Open Zeppelin" />
+            <Ora src={oracle} alt="Oracle" />
+            <Mor src={morph} alt="Morpheus" />
+            <Sam src={sam} alt="Samsung" />
+            <Mon src={mon} alt="Monday" />
+            <Seg src={seg} alt="Segment" />
+          </Logos>
+        </PromoWrap>
+      </Container>
     </Promo>
   );
 };
