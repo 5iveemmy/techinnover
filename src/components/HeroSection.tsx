@@ -134,9 +134,6 @@ const HeroRight = styled.div``;
 
 const HeroImage = styled.img`
   width: 580px;
-  /* @media screen and (max-width: 1200px) {
-    width: 550px;
-  } */
 
   @media screen and (max-width: 571px) {
     width: 100%;
