@@ -9,6 +9,7 @@ import {
   FeaturePara,
   FeatureSubText,
 } from "./styles";
+import { motion } from "framer-motion";
 
 interface FeatProps {
   imgStart?: boolean;
@@ -40,12 +41,12 @@ const FirstWrap = styled.div<FeatProps>`
   }
 `;
 
-const FirstLeft = styled.div`
+const FirstLeft = styled(motion.div)`
   z-index: 10;
 `;
 
 const FirstImg = styled.img`
-  width: 710px;
+  width: 620px;
 
   @media screen and (max-width: 768px) {
     width: 550px;
@@ -69,7 +70,19 @@ const First = ({
       <TopLine src={top} alt="Lines" />
       <Container>
         <FirstWrap imgStart={imgStart}>
-          <FirstLeft>
+          <FirstLeft
+            initial="offscreen"
+            whileInView="onscreen"
+            viewport={{ once: false }}
+            variants={{
+              offscreen: { x: imgStart ? 100 : -100 },
+              onscreen: {
+                x: 0,
+                transition: { duration: 2 },
+                opacity: [0, 0.2, 0.4, 0.8, 1],
+              },
+            }}
+          >
             <FirstImg src={img} />
           </FirstLeft>
           <FeatureContent>

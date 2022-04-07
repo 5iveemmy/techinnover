@@ -83,6 +83,7 @@ const GstBtn = styled.div`
     0px 1.24074px 3.14815px rgba(255, 127, 92, 0.0168519);
   border-radius: 5px;
   padding: 16px 125px;
+  cursor: pointer;
 
   &:hover {
     opacity: 0.8;

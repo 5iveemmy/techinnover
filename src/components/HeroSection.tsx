@@ -10,6 +10,7 @@ import mon from "../assets/mon.svg";
 import seg from "../assets/seg.svg";
 import top from "../assets/TopLine.svg";
 import down from "../assets/DownLine.svg";
+import { motion } from "framer-motion";
 
 const HeroSect = styled.div`
   overflow: hidden;
@@ -143,7 +144,9 @@ const Play = styled.img`
   height: 25px;
 `;
 
-const HeroRight = styled.div``;
+const HeroRight = styled(motion.div)`
+  display: flex;
+`;
 
 const HeroImage = styled.img`
   width: 580px;
@@ -259,7 +262,19 @@ const HeroSection = () => {
               </Shiw>
             </HeroBtns>
           </HeroLeft>
-          <HeroRight>
+          <HeroRight
+            initial="offscreen"
+            whileInView="onscreen"
+            viewport={{ once: false }}
+            variants={{
+              offscreen: { x: 100 },
+              onscreen: {
+                x: 0,
+                transition: { duration: 2 },
+                opacity: [0, 0.2, 0.4, 0.8, 1],
+              },
+            }}
+          >
             <HeroImage src={smile} alt="Girl On Phone" />
           </HeroRight>
         </HeroSectContainer>
