@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { Button, Container } from "../globalStyles";
 import play from "../assets/play.svg";
-import smile from "../assets/girlOnPhone.svg";
+import smile from "../assets/girlOnPhone.png";
 import zep from "../assets/zep.svg";
 import oracle from "../assets/oracle.svg";
 import morph from "../assets/morph.svg";
@@ -133,11 +133,10 @@ const Play = styled.img`
 const HeroRight = styled.div``;
 
 const HeroImage = styled.img`
-  width: 647px;
-  height: 549px;
-  @media screen and (max-width: 1200px) {
+  width: 580px;
+  /* @media screen and (max-width: 1200px) {
     width: 550px;
-  }
+  } */
 
   @media screen and (max-width: 571px) {
     width: 100%;
