@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { Button, Container } from "../../globalStyles";
-// import tot from "../../assets/tot.svg";
+import { TopLine } from "../HeroSection";
+import top from "../../assets/TopLine.svg";
 import { FeatCont, FrBtnWrap, FrH, FrP, FsH } from "./styles";
 
 interface FeatProps {
@@ -16,7 +17,10 @@ interface FirstProps {
   imgStart?: boolean;
 }
 
-const FirstDiv = styled.div``;
+const FirstDiv = styled.div`
+  position: relative;
+  overflow: hidden;
+`;
 
 const FirstWrap = styled.div<FeatProps>`
   display: flex;
@@ -30,7 +34,9 @@ const FirstWrap = styled.div<FeatProps>`
   }
 `;
 
-const FirstLeft = styled.div``;
+const FirstLeft = styled.div`
+  z-index: 10;
+`;
 
 const FirstImg = styled.img`
   width: 710px;
@@ -54,6 +60,7 @@ const First = ({
 }: FirstProps) => {
   return (
     <FirstDiv>
+      <TopLine src={top} alt="Lines" />
       <Container>
         <FirstWrap imgStart={imgStart}>
           <FirstLeft>

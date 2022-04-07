@@ -53,6 +53,7 @@ const NavMenu = styled.div<IProps>`
     opacity: 1;
     transition: all 0.5s ease;
     background: #3734a9;
+    z-index: 9999;
   }
 `;
 
@@ -66,10 +67,6 @@ const NavLinks = styled(Link)`
     display: table;
     color: #ffffff;
     opacity: 1;
-    /* &:hover {
-      color: #4b59f7;
-      transition: all 0.3s ease;
-    } */
   }
 `;
 
@@ -118,8 +115,10 @@ const NavRight = styled.div`
 `;
 
 const In = styled.p`
+  cursor: pointer;
   @media screen and (max-width: 960px) {
     margin-top: -9rem;
+    color: #ffffff;
   }
 `;
 

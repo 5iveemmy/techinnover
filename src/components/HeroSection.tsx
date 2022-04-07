@@ -8,8 +8,13 @@ import morph from "../assets/morph.svg";
 import sam from "../assets/sam.svg";
 import mon from "../assets/mon.svg";
 import seg from "../assets/seg.svg";
+import top from "../assets/TopLine.svg";
+import down from "../assets/DownLine.svg";
 
-const HeroSect = styled.div``;
+const HeroSect = styled.div`
+  position: relative;
+  overflow: hidden;
+`;
 
 const HeroSectContainer = styled(Container)`
   display: flex;
@@ -176,6 +181,11 @@ const Sam = styled.img``;
 const Mon = styled.img``;
 const Seg = styled.img``;
 
+export const TopLine = styled.img`
+  position: absolute;
+  z-index: 1;
+`;
+
 const Promos = () => {
   return (
     <Promo>
@@ -217,6 +227,8 @@ const HeroSection = () => {
   return (
     <>
       <HeroSect>
+        <TopLine src={top} alt="Lines" />
+        <TopLine src={down} alt="Lines" />
         <HeroSectContainer>
           <HeroLeft>
             <Manag>Managing business payments has never been easier</Manag>
