@@ -12,8 +12,8 @@ import top from "../assets/TopLine.svg";
 import down from "../assets/DownLine.svg";
 
 const HeroSect = styled.div`
-  position: relative;
   overflow: hidden;
+  position: relative;
 `;
 
 const HeroSectContainer = styled(Container)`
@@ -21,7 +21,9 @@ const HeroSectContainer = styled(Container)`
   justify-content: space-between;
   padding-top: 28px;
   align-items: center;
+  position: relative;
   ${Container};
+
   @media screen and (max-width: 1200px) {
     flex-wrap: wrap;
     justify-content: center;
@@ -29,6 +31,17 @@ const HeroSectContainer = styled(Container)`
 `;
 
 const HeroLeft = styled.div`
+  animation: fadein 3s;
+
+  @keyframes fadein {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
   @media screen and (max-width: 1200px) {
     padding-bottom: 5rem;
   }
@@ -120,7 +133,7 @@ const PlayWrap = styled.div`
   cursor: pointer;
 
   &:hover {
-    opacity: 0.8;
+    transform: scale(1.15);
     transition: 0.4s ease-in-out;
   }
 `;

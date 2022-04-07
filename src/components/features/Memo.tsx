@@ -3,8 +3,6 @@ import { Button, Container } from "../../globalStyles";
 
 const MemoCover = styled.div`
   padding-bottom: 6rem;
-  /* padding-left: 5rem;
-  padding-right: 5rem; */
 `;
 
 const MemoDiv = styled.div`

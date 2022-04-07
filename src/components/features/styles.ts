@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const FeatCont = styled.div`
+export const FeatureContent = styled.div`
   width: 539px;
 
   @media screen and (max-width: 1200px) {
@@ -8,7 +8,7 @@ export const FeatCont = styled.div`
   }
 `;
 
-export const FrH = styled.h3`
+export const FeatureHeader = styled.h3`
   font-weight: 800;
   font-size: 18px;
   padding-bottom: 25px;
@@ -19,7 +19,7 @@ export const FrH = styled.h3`
   }
 `;
 
-export const FsH = styled.p`
+export const FeatureSubText = styled.p`
   font-weight: 700;
   font-size: 50px;
   line-height: 56px;
@@ -31,7 +31,7 @@ export const FsH = styled.p`
   }
 `;
 
-export const FrP = styled.p`
+export const FeaturePara = styled.p`
   font-size: 18px;
   line-height: 26px;
   letter-spacing: -0.02em;
@@ -42,4 +42,4 @@ export const FrP = styled.p`
   }
 `;
 
-export const FrBtnWrap = styled.div``;
+export const FeatureBtnWrap = styled.div``;

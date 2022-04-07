@@ -2,7 +2,13 @@ import styled from "styled-components";
 import { Button, Container } from "../../globalStyles";
 import { TopLine } from "../HeroSection";
 import top from "../../assets/TopLine.svg";
-import { FeatCont, FrBtnWrap, FrH, FrP, FsH } from "./styles";
+import {
+  FeatureContent,
+  FeatureBtnWrap,
+  FeatureHeader,
+  FeaturePara,
+  FeatureSubText,
+} from "./styles";
 
 interface FeatProps {
   imgStart?: boolean;
@@ -66,16 +72,16 @@ const First = ({
           <FirstLeft>
             <FirstImg src={img} />
           </FirstLeft>
-          <FeatCont>
-            <FrH>{headText}</FrH>
-            <FsH>{subText}</FsH>
-            <FrP>{para}</FrP>
-            <FrBtnWrap>
+          <FeatureContent>
+            <FeatureHeader>{headText}</FeatureHeader>
+            <FeatureSubText>{subText}</FeatureSubText>
+            <FeaturePara>{para}</FeaturePara>
+            <FeatureBtnWrap>
               <Button bold big>
                 {buttonLabel}
               </Button>
-            </FrBtnWrap>
-          </FeatCont>
+            </FeatureBtnWrap>
+          </FeatureContent>
         </FirstWrap>
       </Container>
     </FirstDiv>

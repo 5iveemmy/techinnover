@@ -1,6 +1,11 @@
 import styled from "styled-components";
 import { Container } from "../../globalStyles";
-import { FeatCont, FrH, FrP, FsH } from "./styles";
+import {
+  FeatureContent,
+  FeatureHeader,
+  FeaturePara,
+  FeatureSubText,
+} from "./styles";
 import birds from "../../assets/birds.svg";
 
 const SecondDiv = styled.div`
@@ -102,15 +107,17 @@ const Second = () => {
       <SecondDiv>
         <Birds src={birds} alt="Birds" />
         <SecondWrap>
-          <FeatCont>
-            <FrH>OUR FEATURE</FrH>
-            <FsH>Receive payments quickly from anywhere</FsH>
-            <FrP>
+          <FeatureContent>
+            <FeatureHeader>OUR FEATURE</FeatureHeader>
+            <FeatureSubText>
+              Receive payments quickly from anywhere
+            </FeatureSubText>
+            <FeaturePara>
               Why kept very ever home mrs. Considered sympathize ten uncommonly
               occasional assistance sufficient not. Letter of on become he
               tended active enable to.
-            </FrP>
-          </FeatCont>
+            </FeaturePara>
+          </FeatureContent>
           <GsFfWrap>
             <GsFf>Get Started for Free</GsFf>
             <ForInput>

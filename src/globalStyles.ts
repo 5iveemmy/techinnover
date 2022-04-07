@@ -18,8 +18,9 @@ export const Container = styled.div`
   margin-left: auto;
   padding-left: 60px;
   padding-right: 60px;
+  position: relative;
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 571px) {
     padding-right: 38px;
     padding-left: 38px;
   }
@@ -48,8 +49,9 @@ export const Button = styled.button<BtnProps>`
   border: none;
   padding: 16px 35px;
   cursor: pointer;
+
   &:hover {
-    opacity: 0.8;
+    transform: scale(1.15);
     transition: 0.4s ease-in-out;
   }
 
