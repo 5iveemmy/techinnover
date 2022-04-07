@@ -1,6 +1,6 @@
 import { useState } from "react";
 import styled from "styled-components";
-import { Container, Button } from "../globalStyles";
+import { Button } from "../globalStyles";
 import { FaBars, FaTimes } from "react-icons/fa";
 import arrowDown from "../assets/arrowDown.svg";
 import { Link } from "react-router-dom";
@@ -11,11 +11,22 @@ interface IProps {
 
 const Nav = styled.nav``;
 
-const NavbarContainer = styled(Container)`
+const NavbarContainer = styled.div`
   display: flex;
   justify-content: space-between;
   padding-top: 28px;
-  ${Container}
+  width: 100%;
+  max-width: 1440px;
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 60px;
+  padding-right: 60px;
+  position: relative;
+
+  @media screen and (max-width: 571px) {
+    padding-right: 38px;
+    padding-left: 38px;
+  }
 `;
 
 const NavLeft = styled.h3`
@@ -46,9 +57,9 @@ const NavMenu = styled.div<IProps>`
     display: flex;
     flex-direction: column;
     width: 100%;
-    height: 98vh;
+    height: 100vh;
     position: absolute;
-    top: 75px;
+    top: 70px;
     left: ${({ clicked }) => (clicked ? 0 : "-100%")};
     opacity: 1;
     transition: all 0.5s ease;
@@ -67,6 +78,11 @@ const NavLinks = styled(Link)`
     display: table;
     color: #ffffff;
     opacity: 1;
+
+    &:hover {
+      transform: scale(1.1);
+      transition: 0.4s ease-in-out;
+    }
   }
 `;
 

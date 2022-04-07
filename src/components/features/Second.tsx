@@ -82,16 +82,14 @@ const GstBtn = styled.div`
     0px 5.45926px 6.51852px rgba(255, 127, 92, 0.0274815),
     0px 1.24074px 3.14815px rgba(255, 127, 92, 0.0168519);
   border-radius: 5px;
-  padding: 16px 125px;
+  padding: 16px;
   cursor: pointer;
+  display: flex;
+  justify-content: center;
 
   &:hover {
     opacity: 0.8;
     transition: 0.4s ease-in-out;
-  }
-
-  @media screen and (max-width: 571px) {
-    padding: 16px 100px;
   }
 `;
 

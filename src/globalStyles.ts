@@ -11,7 +11,6 @@ const GlobalStyle = createGlobalStyle`
 `;
 
 export const Container = styled.div`
-  z-index: 1;
   width: 100%;
   max-width: 1440px;
   margin-right: auto;
@@ -19,7 +18,7 @@ export const Container = styled.div`
   padding-left: 60px;
   padding-right: 60px;
   position: relative;
-
+  z-index: 1;
   @media screen and (max-width: 571px) {
     padding-right: 38px;
     padding-left: 38px;
