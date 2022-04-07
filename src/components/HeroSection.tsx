@@ -16,16 +16,30 @@ const HeroSectContainer = styled(Container)`
   justify-content: space-between;
   padding-top: 28px;
   align-items: center;
-  ${Container}
+  ${Container};
+  @media screen and (max-width: 1200px) {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
 `;
 
-const HeroLeft = styled.div``;
+const HeroLeft = styled.div`
+  @media screen and (max-width: 1200px) {
+    padding-bottom: 5rem;
+  }
+`;
 
 const Manag = styled.p`
   font-weight: 800;
   font-size: 60px;
   letter-spacing: -0.03em;
   line-height: 80px;
+  @media screen and (max-width: 1200px) {
+    font-size: 50px;
+  }
+  @media screen and (max-width: 768px) {
+    font-size: 40px;
+  }
 `;
 
 const End = styled.p`
@@ -36,6 +50,14 @@ const End = styled.p`
   padding-bottom: 24px;
   width: 446px;
   line-height: 30px;
+
+  @media screen and (max-width: 1200px) {
+    font-size: 18px;
+    width: auto;
+  }
+  @media screen and (max-width: 768px) {
+    font-size: 16px;
+  }
 `;
 
 const HeroBtns = styled.div`
@@ -43,6 +65,14 @@ const HeroBtns = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  @media screen and (max-width: 960px) {
+    width: auto;
+  }
+
+  @media screen and (max-width: 768px) {
+    flex-wrap: wrap;
+  }
 `;
 
 const GetWrap = styled.div``;
@@ -52,6 +82,10 @@ const Shiw = styled.div`
   justify-content: space-between;
   align-items: center;
   width: 205px;
+
+  @media screen and (max-width: 500px) {
+    padding-top: 20px;
+  }
 `;
 
 const ShiwText = styled.p`
@@ -59,6 +93,9 @@ const ShiwText = styled.p`
   font-weight: 600;
   letter-spacing: -0.02em;
   font-size: 17px;
+  @media screen and (max-width: 768px) {
+    font-size: 16px;
+  }
 `;
 
 const PlayWrap = styled.div`
@@ -93,6 +130,13 @@ const HeroRight = styled.div``;
 const HeroImage = styled.img`
   width: 647px;
   height: 549px;
+  @media screen and (max-width: 1200px) {
+    width: 550px;
+  }
+
+  @media screen and (max-width: 571px) {
+    width: 100%;
+  }
 `;
 
 const Promo = styled.div`
@@ -115,6 +159,14 @@ const PromoHead = styled.h3`
 const Logos = styled.div`
   display: flex;
   justify-content: space-between;
+  @media screen and (max-width: 1200px) {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+`;
+
+const ForLogos = styled.div`
+  padding: 20px;
 `;
 
 const Ozp = styled.img``;
@@ -133,12 +185,27 @@ const Promos = () => {
             Over 32k+ software businesses growing with AR Shakir
           </PromoHead>
           <Logos>
-            <Ozp src={zep} alt="Open Zeppelin" />
-            <Ora src={oracle} alt="Oracle" />
-            <Mor src={morph} alt="Morpheus" />
-            <Sam src={sam} alt="Samsung" />
-            <Mon src={mon} alt="Monday" />
-            <Seg src={seg} alt="Segment" />
+            <ForLogos>
+              <Ozp src={zep} alt="Open Zeppelin" />
+            </ForLogos>
+            <ForLogos>
+              <Ora src={oracle} alt="Oracle" />
+            </ForLogos>
+            <ForLogos>
+              <Mor src={morph} alt="Morpheus" />
+            </ForLogos>
+            <ForLogos>
+              {" "}
+              <Sam src={sam} alt="Samsung" />
+            </ForLogos>
+            <ForLogos>
+              {" "}
+              <Mon src={mon} alt="Monday" />
+            </ForLogos>
+            <ForLogos>
+              {" "}
+              <Seg src={seg} alt="Segment" />
+            </ForLogos>
           </Logos>
         </PromoWrap>
       </Container>

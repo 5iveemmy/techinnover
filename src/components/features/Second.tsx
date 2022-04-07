@@ -6,7 +6,6 @@ import birds from "../../assets/birds.svg";
 const SecondDiv = styled.div`
   background-color: #f3f7fa;
   border-radius: 20px;
-  width: 1170px;
   margin: auto;
   position: relative;
 `;
@@ -15,10 +14,22 @@ const SecondWrap = styled.div`
   display: flex;
   justify-content: space-between;
   padding: 75px 68px;
+
+  @media screen and (max-width: 1200px) {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  @media screen and (max-width: 571px) {
+    padding: 75px 40px;
+  }
 `;
 
 const GsFfWrap = styled.form`
   width: 356px;
+  @media screen and (max-width: 571px) {
+    width: 100%;
+  }
 `;
 
 const GsFf = styled.h3`
@@ -28,11 +39,14 @@ const GsFf = styled.h3`
   line-height: 30px;
   letter-spacing: -0.02em;
   padding-bottom: 22px;
+
+  @media screen and (max-width: 768px) {
+    font-size: 18px;
+  }
 `;
 
 const ForInput = styled.div`
   padding-bottom: 2rem;
-  width: 356px;
 `;
 
 const Input = styled.input`
@@ -68,6 +82,10 @@ const GstBtn = styled.div`
   &:hover {
     opacity: 0.8;
     transition: 0.4s ease-in-out;
+  }
+
+  @media screen and (max-width: 571px) {
+    padding: 16px 100px;
   }
 `;
 

@@ -23,13 +23,25 @@ const FirstWrap = styled.div<FeatProps>`
   justify-content: space-between;
   padding-top: 7rem;
   flex-direction: ${({ imgStart }) => (imgStart ? "row-reverse" : "row")};
-  /* flex-wrap: wrap; */
+
+  @media screen and (max-width: 1200px) {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
 `;
 
 const FirstLeft = styled.div``;
 
 const FirstImg = styled.img`
   width: 710px;
+
+  @media screen and (max-width: 768px) {
+    width: 550px;
+  }
+
+  @media screen and (max-width: 571px) {
+    width: 100%;
+  }
 `;
 
 const First = ({
