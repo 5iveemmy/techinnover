@@ -15,7 +15,7 @@ const FooterWrap = styled.div`
   flex-wrap: wrap;
 `;
 
-const FootAr = styled.div`
+const FooterLeft = styled.div`
   width: 40%;
   @media screen and (max-width: 1200px) {
     width: auto;
@@ -23,13 +23,13 @@ const FootAr = styled.div`
   }
 `;
 
-const FootArTExt = styled.h2`
+const FootArText = styled.h2`
   font-weight: 700;
   font-size: 20px;
   padding-bottom: 16px;
 `;
 
-const FootArPara = styled.p`
+const FootLeftPara = styled.p`
   opacity: 0.4;
   font-weight: 500;
   line-height: 26px;
@@ -100,14 +100,14 @@ const Footer = () => {
     <ForFooter>
       <Container>
         <FooterWrap>
-          <FootAr>
-            <FootArTExt>AR SHAKIR</FootArTExt>
-            <FootArPara>
+          <FooterLeft>
+            <FootArText>AR SHAKIR</FootArText>
+            <FootLeftPara>
               Yet bed any for travelling assistance indulgence unpleasing. Not
               thoughts all exercise blessing. Indulgence way everything joy
               alteration boisterous the attachment.
-            </FootArPara>
-          </FootAr>
+            </FootLeftPara>
+          </FooterLeft>
           <FooterSub>
             <FooterLinkItem>
               <FooterLinkTitle>Company</FooterLinkTitle>

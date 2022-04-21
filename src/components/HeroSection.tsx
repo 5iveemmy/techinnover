@@ -186,12 +186,7 @@ const ForLogos = styled.div`
   padding: 20px;
 `;
 
-const Ozp = styled.img``;
-const Mor = styled.img``;
-const Ora = styled.img``;
-const Sam = styled.img``;
-const Mon = styled.img``;
-const Seg = styled.img``;
+const PromoImage = styled.img``;
 
 export const TopLine = styled.img`
   position: absolute;
@@ -208,25 +203,25 @@ const Promos = () => {
           </PromoHead>
           <Logos>
             <ForLogos>
-              <Ozp src={zep} alt="Open Zeppelin" />
+              <PromoImage src={zep} alt="Open Zeppelin" />
             </ForLogos>
             <ForLogos>
-              <Ora src={oracle} alt="Oracle" />
+              <PromoImage src={oracle} alt="Oracle" />
             </ForLogos>
             <ForLogos>
-              <Mor src={morph} alt="Morpheus" />
-            </ForLogos>
-            <ForLogos>
-              {" "}
-              <Sam src={sam} alt="Samsung" />
+              <PromoImage src={morph} alt="Morpheus" />
             </ForLogos>
             <ForLogos>
               {" "}
-              <Mon src={mon} alt="Monday" />
+              <PromoImage src={sam} alt="Samsung" />
             </ForLogos>
             <ForLogos>
               {" "}
-              <Seg src={seg} alt="Segment" />
+              <PromoImage src={mon} alt="Monday" />
+            </ForLogos>
+            <ForLogos>
+              {" "}
+              <PromoImage src={seg} alt="Segment" />
             </ForLogos>
           </Logos>
         </PromoWrap>
