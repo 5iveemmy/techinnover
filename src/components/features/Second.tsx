@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { Container } from "../../globalStyles";
+import { useForm } from "react-hook-form";
 import {
   FeatureContent,
   FeatureHeader,
@@ -7,6 +8,7 @@ import {
   FeatureSubText,
 } from "./styles";
 import birds from "../../assets/birds.svg";
+import { useState } from "react";
 
 const SecondDiv = styled.div`
   background-color: #f3f7fa;
@@ -71,7 +73,7 @@ const Input = styled.input`
 
 const GstBtnWrap = styled.div``;
 
-const GstBtn = styled.div`
+const GstBtn = styled.button`
   background-color: #ff7f5c;
   color: #ffffff;
   border: none;
@@ -86,6 +88,7 @@ const GstBtn = styled.div`
   cursor: pointer;
   display: flex;
   justify-content: center;
+  width: 100%;
 
   &:hover {
     opacity: 0.8;
@@ -100,7 +103,27 @@ const Birds = styled.img`
   top: -1.5rem;
 `;
 
+const Span = styled.span``;
+
 const Second = () => {
+  const [text, setText] = useState();
+  const {
+    register,
+    formState: { errors },
+    handleSubmit,
+  } = useForm({
+    mode: "onChange",
+    defaultValues: {
+      email: "",
+      password: "",
+    },
+  });
+
+  const handleOnSubmit = (e: any) => {
+    console.log({ e });
+    // data(e.email, e.password);
+  };
+
   return (
     <Container>
       <SecondDiv>
@@ -117,16 +140,37 @@ const Second = () => {
               tended active enable to.
             </FeaturePara>
           </FeatureContent>
-          <GsFfWrap>
+          <GsFfWrap onSubmit={handleSubmit(handleOnSubmit)}>
             <GsFf>Get Started for Free</GsFf>
             <ForInput>
-              <Input type="email" placeholder="Email Address" />
+              <Input
+                {...register("email", {
+                  required: "Please enter your email",
+                  pattern: {
+                    value:
+                      /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
+                    message: "Invalid email address",
+                  },
+                })}
+                type="email"
+                placeholder="Email Address"
+              />
+              {/* {errors.email?.type === "required" && "Email is required"} */}
+              <Span>{errors.email?.message}</Span>
             </ForInput>
             <ForInput>
-              <Input type="passwork" placeholder="Password" />
+              <Input
+                {...register("password", {
+                  required: "Please enter your password",
+                })}
+                type="password"
+                name="password"
+                placeholder="Password"
+              />
+              <Span>{errors.password?.message}</Span>
             </ForInput>
             <GstBtnWrap>
-              <GstBtn>Get Started</GstBtn>
+              <GstBtn type="submit">Get Started</GstBtn>
             </GstBtnWrap>
           </GsFfWrap>
         </SecondWrap>
@@ -136,3 +180,6 @@ const Second = () => {
 };
 
 export default Second;
+function defaultValues() {
+  throw new Error("Function not implemented.");
+}
